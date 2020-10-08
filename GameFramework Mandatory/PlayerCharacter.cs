@@ -7,10 +7,8 @@ namespace GameFramework_Mandatory
    public class PlayerCharacter : Character
    {
         
-
-        public PlayerCharacter() : base(hitpoints)
+        public PlayerCharacter(int hitpoints, string name) : base(hitpoints, name)
         {
-            Hitpoints = hitpoints;
         }
     }
 }
