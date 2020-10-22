@@ -10,12 +10,21 @@ namespace GameFramework_Mandatory
         private int _hitpoints;
         private string _name;
         private bool _dead = false;
+        private Position _position;
 
-        public Character(int hitpoints, string name)
+        public Character(int hitpoints, string name, Position position)
         {
             Hitpoints = hitpoints;
             Name = name;
+            CharacterPos = position;
         }
+
+        public Position CharacterPos
+        {
+            get { return _position; }
+            set { _position = CharacterPos; }
+        }
+
 
         public int Hitpoints
         {
