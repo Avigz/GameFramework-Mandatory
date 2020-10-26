@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using GameFramework_Mandatory.interfaces;
 
 namespace GameFramework_Mandatory
 {
-    public class Equipment
+    public class Equipment : IEquipment
     {
         private string _name;
         private int _hitpoints;

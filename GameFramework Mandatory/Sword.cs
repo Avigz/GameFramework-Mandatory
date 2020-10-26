@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using GameFramework_Mandatory.interfaces;
 
 namespace GameFramework_Mandatory
 {
-    public class Weapon : IWeapon
+    public class Sword : IWeapon
     {
-        public Weapon(int damage, bool twohanded)
+        public Sword(int damage, bool twohanded)
         {
             if (twohanded)
             {

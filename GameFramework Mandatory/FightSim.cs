@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using GameFramework_Mandatory.interfaces;
 
 namespace GameFramework_Mandatory
 {
@@ -8,7 +9,7 @@ namespace GameFramework_Mandatory
     {
         private Random _rnd = new Random();
 
-        public void Fight(Character a, Character b)
+        public void Fight(ICharacter a, ICharacter b)
         {
             if (_rnd.Next(2) == 1)
             {

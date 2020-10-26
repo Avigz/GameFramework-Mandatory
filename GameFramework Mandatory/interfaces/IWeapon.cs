@@ -1,4 +1,4 @@
-﻿namespace GameFramework_Mandatory
+﻿namespace GameFramework_Mandatory.interfaces
 {
     public interface IWeapon
     {

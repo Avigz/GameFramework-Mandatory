@@ -16,6 +16,6 @@ namespace GameFramework_Mandatory
         }
 
         public List<WorldObject> Objects = new List<WorldObject>();
-        public List<Character> Characters = new List<Character>();
+        public List<PlayerCharacter> Characters = new List<PlayerCharacter>();
     }
 }

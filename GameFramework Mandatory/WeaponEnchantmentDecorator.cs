@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using GameFramework_Mandatory.interfaces;
 
 namespace GameFramework_Mandatory
 {
-    public class EnchantmentDecorator : IWeapon
+    public class WeaponEnchantmentDecorator : IWeapon
     {
-        public EnchantmentDecorator(IWeapon weapon)
+        public WeaponEnchantmentDecorator(IWeapon weapon)
         {
             _weapon = weapon;
         }
