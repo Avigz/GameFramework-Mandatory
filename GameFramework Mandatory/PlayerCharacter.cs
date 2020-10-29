@@ -45,7 +45,9 @@ namespace GameFramework_Mandatory
         }
     }
 
-    public string Name
+      
+
+        public string Name
     {
         get => _name;
         set => _name = value;

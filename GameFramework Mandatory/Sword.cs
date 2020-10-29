@@ -7,7 +7,7 @@ namespace GameFramework_Mandatory
 {
     public class Sword : IWeapon
     {
-        public Sword(int damage, bool twohanded)
+        public Sword(int damage, bool twohanded, string name)
         {
             if (twohanded)
             {
@@ -20,7 +20,10 @@ namespace GameFramework_Mandatory
                 MaxDamage = damage * 5 / 2;
             }
 
+            _name = Name;
+
         }
+        private string _name;
         private double _minDamage;
         private double _maxDamage;
         public double MinDamage { get => _minDamage; set => _minDamage = value; }
@@ -35,6 +38,6 @@ namespace GameFramework_Mandatory
         }
 
         public bool TwoHanded { get; set; }
-
+        public string Name { get => _name; set => _name = value; }
     }
 }

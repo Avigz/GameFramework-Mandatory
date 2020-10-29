@@ -30,6 +30,8 @@ namespace GameFramework_Mandatory
         }
         public bool TwoHanded { get => _weapon.TwoHanded; }
 
+        public string Name { get => "Enchanted " + _weapon.Name; set { _weapon.Name = Name; } }
+
         public int DoAttack()
         {
             return _weapon.DoAttack();
