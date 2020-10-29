@@ -5,9 +5,12 @@ using System.Text;
 
 namespace GameFramework_Mandatory
 {
-    public class Game
+    public class Game 
     {
-      
+      public Game(WorldSingleton world)
+        {
+
+        }
 
     }
 }

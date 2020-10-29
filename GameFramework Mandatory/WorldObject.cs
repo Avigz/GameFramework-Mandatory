@@ -6,7 +6,18 @@ namespace GameFramework_Mandatory
 {
    public class WorldObject
     {
-        public List<int> Coordinates = new List<int>(2);
+        public Position Position
+        {
+            get;set;
+        }
+
+        public string Name { get; set; }
+       
+        public Delegate InternalObject
+        {
+            get;set;
+        }
+        
 
     }
 }
