@@ -1,5 +1,7 @@
 ﻿using GameFramework_Mandatory;
 using System;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Testing
 {
@@ -10,7 +12,7 @@ namespace Testing
             PlayerCharacter a = new PlayerCharacter(30, "BigJoergen",new Position(1,2)) ;
             PlayerCharacter b = new PlayerCharacter(30, "SmallKim",new Position(1,3));
             Sword BigSword = new Sword(6, true, "excalibur");
-            Sword SmallSword = new Sword(2, false, "Smoerkniv");
+            Sword SmallSword = new Sword(3, false, "Smoerkniv");
             WeaponEnchantmentDecorator EnchantedSword = new WeaponEnchantmentDecorator(SmallSword);
             Equipment Helmet = new Equipment("Helmet", 3);
             Equipment ShinGuard = new Equipment("ShinGuard", 10);
@@ -21,9 +23,13 @@ namespace Testing
             a.EquipItem(ShinGuard);
             b.EquipItem(ShinGuard);
             b.EquipItem(ShinGuard);
-            FightSim fighting = new FightSim();
-
-            fighting.Fight(a, b);
+            WorldSingletonFactory gameworld = WorldSingletonFactory.CreateInstance(new Position(10,10));
+            gameworld.Characters.Add(a);
+            gameworld.Characters.Add(b);
+            Game engine = new Game(gameworld);
+            Console.WriteLine(a.NearbyCharacter(b));
+            engine.getFights();
+            
         }
     }
 }

@@ -20,13 +20,13 @@ namespace GameFramework_Mandatory
     {
         Hitpoints = hitpoints;
         Name = name;
-        CharacterPos = position;
+        _position = position;
     }
 
     public Position CharacterPos
     {
         get { return _position; }
-        set { _position = CharacterPos; }
+        set { _position = value; }
     }
 
 
@@ -137,5 +137,21 @@ namespace GameFramework_Mandatory
             Dead = true;
         }
     }
+
+    public bool NearbyCharacter(ICharacter C)
+        {
+            if (C.CharacterPos.X >= CharacterPos.X-1 && C.CharacterPos.X <= CharacterPos.X + 1 || C.CharacterPos.X == CharacterPos.X)
+            {
+                if (C.CharacterPos.Y >= CharacterPos.Y - 1 && C.CharacterPos.Y <= CharacterPos.Y + 1 || C.CharacterPos.Y == CharacterPos.Y)
+                {
+                    return true;
+                }
+                
+            }
+            return false; 
+          
+        }
+
+
     }
 }

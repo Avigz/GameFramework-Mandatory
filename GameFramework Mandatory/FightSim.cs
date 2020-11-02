@@ -5,11 +5,11 @@ using GameFramework_Mandatory.interfaces;
 
 namespace GameFramework_Mandatory
 {
-   public class FightSim
+   public static class FightSim
     {
-        private Random _rnd = new Random();
+        private static Random _rnd = new Random();
 
-        public void Fight(ICharacter a, ICharacter b)
+        public static void Fight(ICharacter a, ICharacter b)
         {
             if (_rnd.Next(2) == 1)
             {
