@@ -47,7 +47,7 @@ namespace GameFramework_Mandatory
 
       
 
-        public string Name
+    public string Name
     {
         get => _name;
         set => _name = value;
@@ -149,9 +149,55 @@ namespace GameFramework_Mandatory
                 
             }
             return false; 
-          
         }
 
+    public bool GetNearbyWorldObjects(IWorldObject item)
+        {
+            if (item.Position.X >= CharacterPos.X - 1 && item.Position.X <= CharacterPos.X + 1 || item.Position.X == CharacterPos.X)
+            {
+                if (item.Position.Y >= CharacterPos.Y - 1 && item.Position.Y <= CharacterPos.Y + 1 || item.Position.Y == CharacterPos.Y)
+                {
+                    //if (item.InternalObject.GetType() is IWeapon)
+                    //{
+                    //    Console.WriteLine("Du har fundet " + item.Name);
+                    //    EquipWeapon((IWeapon)item.InternalObject);
+                    //    return true;
+                    //}
+                    //if (item.InternalObject.GetType() is IEquipment)
+                    //{
+                    //    Console.WriteLine("Du har fundet " + item.Name);
+                    //    EquipItem((IEquipment)item.InternalObject);
+                    //    return true;
+                    //}
+                    //else return false;
+
+                    switch (item.InternalObject)
+                    {
+                        case IWeapon:
+                            Console.WriteLine("Du har fundet " + (IWeapon)item.InternalObject);
+                            EquipWeapon((IWeapon)item.InternalObject);
+                            return true;
+                            
+                        case IEquipment:
+                            Console.WriteLine("Du har fundet " + (IEquipment)item.InternalObject);
+                            EquipItem((IEquipment)item.InternalObject);
+                            return true;
+                            
+                        case null:
+                            Console.WriteLine(item.Name + " Indeholder ingenting");
+                            return true;
+                            
+                        default:
+                            return false;
+                            
+                    }
+                }
+                else return false;
+
+            }
+            else
+                return false;
+        }
 
     }
 }

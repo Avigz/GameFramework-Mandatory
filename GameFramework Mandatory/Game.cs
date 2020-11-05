@@ -16,7 +16,7 @@ namespace GameFramework_Mandatory
         }
         private WorldSingletonFactory _gameWorld;
 
-        public void getFights()
+        public void GetFights()
         {
             foreach (var v in _gameWorld.Characters)
             {
@@ -26,6 +26,17 @@ namespace GameFramework_Mandatory
                     {
                         FightSim.Fight(p, v);
                     }
+                }
+            }
+        }
+
+        public void GetWorldObjects()
+        {
+            foreach(var v in _gameWorld.Characters)
+            {
+                foreach(var p in _gameWorld.Objects)
+                {
+                    v.GetNearbyWorldObjects(p);
                 }
             }
         }

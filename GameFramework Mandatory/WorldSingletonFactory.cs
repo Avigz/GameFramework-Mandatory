@@ -16,13 +16,13 @@ namespace GameFramework_Mandatory
             WorldSize = maxvalues;
         }
 
-        public List<WorldObject> Objects = new List<WorldObject>();
+        public List<IWorldObject> Objects = new List<IWorldObject>();
         public List<PlayerCharacter> Characters = new List<PlayerCharacter>();
-        public void AddCharacter(ICharacter c)
+        public void AddCharacter(PlayerCharacter c)
         {
             if(c.CharacterPos.X <= WorldSize.X && c.CharacterPos.Y <= WorldSize.Y)
             {
-
+                Characters.Add(c);
             }
         }
 

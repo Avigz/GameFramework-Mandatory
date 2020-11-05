@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>GameFramework_Mandatory</RootNamespace>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
 </Project>
